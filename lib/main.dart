@@ -80,7 +80,8 @@ class _MyAppState extends State<MyApp> {
                               TextFormField(
                                 controller: _emailCtrl,
                                 validator: (String? value) {
-                                  if (value!.isEmpty || !value!.contains(".")) {
+                                  if (value != null &&
+                                     (value.isEmpty || !value.contains("@"))) {
                                     return "Please enter valid email address!";
                                   }
                                   return null;
